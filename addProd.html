@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add product</title>
+	<style>
+		.box {
+			width: 30%;
+  			border: 5px solid lightpink;
+			}
+		input[type=text], input[type=number], select{
+		  width: 300px;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  display: inline-block;
+		  border: 1px solid #ccc;
+		  box-sizing: border-box;
+		}
+		input[type=submit]{
+			margin-left: 50px;
+			background-color: lightpink;
+			  text-decoration: none;
+			  color: black;
+			  padding: 16px;
+			  font-size: 16px;
+			  border: none;
+			  font-family: Arial, Helvetica, sans-serif;
+		}
+		p{
+			font-family: Arial, Helvetica, sans-serif;
+			margin: 8px 0;
+			text-indent: 50px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+	<form action = "storeProd.php" method="post" enctype="multipart/form-data">
+	<br>
+	<p>Product Name:<p>
+	<input type="text" name="prodName" required><br>
+	<p>Category:<p>
+	
+	<select name="category" required>
+		<option value="Skin care"> Skin care </option>
+		<option value="Make up"> Make up </option>
+	</select>
+	<br>
+	<p>Price:<p>
+	<input type="number" name="price" required> <br>
+	<p>Color:<p>
+	<input type="text" name="color"> <br>
+	<p>Stock:<p>
+	<input type="number" name="stock" required> <br>
+	<p>Picture:<p>
+	<input type="file" name="image" required> <br>
+	<p>Brand:<p>
+	<input type="text" name="company" required> <br><br>
+
+	<input type="submit" name="submit" value="Upload">
+	</form><br>
+</div>
+</body>
+</html>
