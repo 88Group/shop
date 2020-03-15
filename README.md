@@ -1,2 +1,2 @@
 # shop
-HTML, PHP, Javascript
+demo : https://pinkshop.herokuapp.com/
