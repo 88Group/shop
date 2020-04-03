@@ -1,5 +1,5 @@
 <?php 
-$con=mysqli_connect("localhost","root","","shop");
+$con=mysqli_connect("us-cdbr-iron-east-04.cleardb.net","b966a2a16a969f","01d02abd","heroku_0b7502a16e114a3");
 
 // Check connection 
 if (mysqli_connect_errno()) 

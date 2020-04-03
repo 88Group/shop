@@ -55,7 +55,7 @@
 <body>
 <button class="btn" onclick="history.go(-1)">Back</button><br>
 <?php 
-$con=mysqli_connect("localhost","root","","shop");
+$con=mysqli_connect("us-cdbr-iron-east-04.cleardb.net","b966a2a16a969f","01d02abd","heroku_0b7502a16e114a3");
 
 // Check connection 
 if (mysqli_connect_errno()) 
@@ -119,7 +119,7 @@ if (mysqli_connect_errno())
 					}
 				echo '<br>Stock:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'.$row['stock'];
 				echo '<br>Brand:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'.$row['brand'].'<br>';
-				echo '<div class = "orderbtn"><form method="post" action = "order.php"> <input type="hidden" name="pID" value='.$row['productID'].'>';
+				echo '<div class = "orderbtn"><form method="post" action = "../order.php"> <input type="hidden" name="pID" value='.$row['productID'].'>';
 				echo 'quantity:<input type = "number" name="quantity" min="1" max ='.$row['stock'].'>';
 				echo '&nbsp&nbsp<input type="submit" name="submit1" value="Order"></form></div><br>';
 				echo '<br><br></div></div></div>';

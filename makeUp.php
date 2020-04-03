@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Skin care product</title>
+	<title>Make up product</title>
 	<style>
 		img {
   max-width:210px;
@@ -52,7 +52,7 @@
 	</style>
 </head>
 <body>
-	<button class="btn" onclick="history.go(-1)">Back</button><br>
+	<button class="btn" onclick="history.go(-1)">Back</button>
 <div class="right" style="float: right;">
 		<form action="searched.php" method="post">
 			<input type="text" name="target" placeholder="Serach a product">
@@ -61,7 +61,7 @@
 	</div>
 <?php 
 
-$con=mysqli_connect("localhost","root","","shop");
+$con=mysqli_connect("us-cdbr-iron-east-04.cleardb.net","b966a2a16a969f","01d02abd","heroku_0b7502a16e114a3");
 
 // Check connection 
 if (mysqli_connect_errno()) 
