@@ -2,57 +2,31 @@
 <html>
 <head>
 	<title>Product information </title>
+	<link rel="stylesheet" href="style.css">
 		<style>
 		img{
-			max-width:300px;
+  			max-width: 300px;
   			max-height: 400px;
   			float: left;
-
 		}
-		.box{
-			background-color: lightpink;
-			max-width: 750px;
-  			max-height: 400px;
-  			margin-top: 25px;
-  			margin-left:300px;
-
+		.f{
+			margin-top: 40px;
 		}
-		.txt{
-			margin-left:50px;
-			margin-right:50px;
-			line-height: 1.8;
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 20px;
-		}
-		.btnn{
-			  background-color: lightpink;
-			  color: black;
-			  padding: 16px;
-			  font-size: 16px;
-			  border: none;
-			  cursor: pointer;
-			  font-family: Arial, Helvetica, sans-serif;
-			}
 			input[type=submit]{
-			background-color: white;
-			  color: black;
-			  padding: 16px;
-			  font-size: 16px;
-			  border: none;
-			  cursor: pointer;
-			  font-family: Arial, Helvetica, sans-serif;
-			  float: right;
+			background-color: #fb6e6e;
+			color: #ffffff;
+			padding: 14px;
+			outline: none;
 		}
-		a{
-			text-decoration: none;
+	
+		input[type=number]{
+			max-width: 80px;
 		}
-		.orderbtn{
-			float: right;
-		}
+	
 		</style>
 </head>
 <body>
-	<button  class ="btnn" onclick="history.go(-1)">Back</button><br>
+	<button class="btn" onclick="history.go(-1)">Back</button>
 <?php 
 $con=mysqli_connect("us-cdbr-iron-east-04.cleardb.net","b966a2a16a969f","01d02abd","heroku_0b7502a16e114a3");
 session_start();
@@ -77,7 +51,7 @@ if (mysqli_connect_errno())
 			{
 				echo '<div class = "f">';
 				echo '<img src= "data:image/jpeg;base64,' .base64_encode($row['image']).'">';
-				echo '<div class = "box"><div class = "txt">';
+				echo '<div class = "probox"><div class = "txt">';
 				echo '<br>Product Name:&nbsp&nbsp'.$row['name'];
 				echo '<br>Category:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' .$row['category'];
 				if($row['color']!= NULL)
@@ -121,9 +95,9 @@ if (mysqli_connect_errno())
 				echo '<br>Stock:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'.$row['stock'];
 				echo '<br>Brand:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'.$row['brand'].'<br>';
 				echo '<div class = "orderbtn"><form action = "../order.php" method="post"> <input type="hidden" name="pID" value="'.$row['productID'].'">';
-				echo 'quantity:<input type = "number" name="quantity" min="1" max = "'.$row['stock'].'">';
-				echo '&nbsp&nbsp<input type="submit" name="submit2" value="Order"></form></div><br>';
-				echo '<br></div></div></div>';
+				echo 'quantity:&nbsp<input type = "number" name="quantity" min="1" max = "'.$row['stock'].'">';
+				echo '&nbsp<input type="submit" name="submit2" value="Order" class="btn"></form></div><br>';
+				echo '</div></div></div>';
 				}
 
 			}

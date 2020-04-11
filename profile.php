@@ -2,31 +2,16 @@
 <html>
 <head>
 	<title>Profile</title>
+	<link rel="stylesheet" href="style.css">
 	<style>
 		.box {
-			width: 30%;
-  			border: 5px solid lightpink;
+			width: 28%;
+  			border: 4px solid #fd8585e3;
+  			height: auto;
+  			padding: 40px;
+  			margin-left: auto;
+  			margin-right: auto;
 			}
-		.txt{
-			color: black;
-			text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 18px;
-			margin-left:50px;
-			margin-right:50px;
-			line-height: 2.0;
-			text-indent: 50px;
-		}
-		.pro
-		{
-			color: grey;
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 40px;
-			margin-left:50px;
-			margin-right:50px;
-			line-height: 1.8;
-			text-indent: 50px;
-		}
 	</style>
 </head>
 <body>
@@ -49,17 +34,18 @@ elseif(isset($_SESSION["uid"]))
 	}
 	else
 	{
-		echo '<br><br><div class="pro"> Profile </div>';
+		echo '<button class="btn" onclick="history.go(-1)">Back</button>';
+		echo '<div class="pro"> Profile </div>';
 		echo '<br><div class="box">';
 		while($row = mysqli_fetch_array($res))
 		{
 			echo '<div class="txt">';
-			echo '<br>UserID: '.$row['userID'].'<br>';
+			echo 'UserID: '.$row['userID'].'<br>';
 			echo 'Firstname: '.$row['fName'].'<br>';
 			echo 'Lastname: '.$row['lName'].'<br>';
 			echo 'Date of birth: '.$row['DOB'].'<br>';
 			echo 'Email: '.$row['email'];
-			echo '</div><br>';
+			echo '</div>';
 		}
 		echo "</div>";
 	}

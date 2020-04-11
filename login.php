@@ -2,43 +2,26 @@
 <html>
 <head>
 	<title>Login</title>
+	<link rel="stylesheet" href="style.css">
 	<style>
 		input{
 
 		}
 		.box {
-			width: 30%;
-  			border: 5px solid lightpink;
+			width: 28%;
+  			border: 4px solid #fd8585e3;
+  			height: 50vh;
 			}
-		input[type=text], input[type=password] {
-		  width: 300px;
-		  padding: 12px 20px;
-		  margin: 8px 0;
-		  display: inline-block;
-		  border: 1px solid #ccc;
-		  box-sizing: border-box;
-		}
 		p{
 			font-family: Arial, Helvetica, sans-serif;
 			margin: 8px 0;
-			text-indent: 50px;
+			text-indent: 30px;
+			font-size: 18px;
 		}
 		input[type=submit]{
-			margin-left: 50px;
-			background-color: lightpink;
-			  text-decoration: none;
-			  color: black;
-			  padding: 16px;
-			  font-size: 16px;
-			  border: none;
-			  font-family: Arial, Helvetica, sans-serif;
-		}
-		.reg{
-			color: black;
-			text-decoration: none;
-			float: right;
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 14px;
+			margin-left: 30px;
+			background-color: #fb6e6ee3;
+			color: #ffffff;
 		}
 	</style>
 </head>

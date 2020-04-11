@@ -2,61 +2,14 @@
 <html>
 <head>
 	<title>Skin care product</title>
-	<style>
-		img {
-  max-width:210px;
-  max-height: 280px;
-  float: left;
-}
-.imm {
-  max-width:210px;
-  max-height: 280px;
-  float: left;
-}
-.content{
-  width:200px;
-  text-align: center;
-  display:block;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.box{
-  width: 220px;
-  height: 290px;
-  padding: 10px;
-  background-color: white;
-
-}
-.column {
-  float: left;
-  width: 350px;
-  padding: 5px;
-}
-
-/* Clear floats after image containers */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-  align-self: center;
-}
-.btn{
-			  background-color: lightpink;
-			  color: black;
-			  padding: 16px;
-			  font-size: 16px;
-			  border: none;
-			  cursor: pointer;
-			  font-family: Arial, Helvetica, sans-serif;
-			}
-	</style>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<button class="btn" onclick="history.go(-1)">Back</button>
-<div class="right" style="float: right;">
+<div class="rg" style="float: right;">
 		<form action="searched.php" method="post">
 			<input type="text" name="target" placeholder="Serach a product">
-			<button type="submit" style="background-color: lightpink;">Search</button>
+			<button type="submit" class="button">Search</button>
 		</form>		
 	</div>
 <?php 
@@ -77,13 +30,12 @@ if (mysqli_connect_errno())
 		echo '<br><br><br><div class="row">';
 		while($row = mysqli_fetch_array($res))
 		{
-				echo '<div class="column">';
 				echo '<div class = "box">';
-				echo '<a href="proInfo.php/?pName='.$row['name'].'">';
+				echo '<a href="proInfo.php?pName='.$row['name'].'">';
 				echo '<img src= "data:image/jpeg;base64,' .base64_encode($row['image']).'">';
 				echo '</a>';
-				echo '<a href="proInfo.php/?pName='.$row["name"].'" style ="text-decoration: none;">';
-				echo '<div class = "content"  style = "color:black;"><p>'.$row['name']. '</p></div></a></div></div>';
+				echo '<a href="proInfo.php?pName='.$row["name"].'" style ="text-decoration: none;">';
+				echo '<div class = "content"  style = "color:black;"><p>'.$row['name']. '</p></div></a></div>';
 		}
 		echo '</div>';
 	}

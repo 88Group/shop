@@ -2,47 +2,26 @@
 <html>
 <head>
 	<title>View orders</title>
+	<link rel="stylesheet" href="style.css">
 	<style>
-table, td, th {  
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  padding: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-
-}
 .tot
 {
 	  font-family: Arial, Helvetica, sans-serif;
 	  font-size: 20px;
 	  font-weight: 10px;
 }
-.btn{
-			  background-color: lightpink;
-			  color: black;
-			  padding: 16px;
-			  font-size: 16px;
-			  border: none;
-			  cursor: pointer;
-			  font-family: Arial, Helvetica, sans-serif;
-			  text-decoration: none;
-			}
-.btnn
+input[type=submit]
 {
 	background-color: #f75757;
 			  color: white;
-			  padding: 16px;
-			  font-size: 16px;
+			  padding: 18px;
+			  font-size: 20px;
 			  border: none;
 			  cursor: pointer;
 			  font-family: Arial, Helvetica, sans-serif;
+}
+input[type=submit]:hover{
+	background-color: #f75757e3;
 }
 </style>
 </head>
@@ -121,7 +100,7 @@ elseif(isset($_SESSION["uid"]))
 						{
 							if($quan%3==0)
 							{
-								$total = $row2["price"]*(2/3);
+								$total = $row2["price"]*(2/3)*$quan;
 								$free = 0;
 							}
 							else if($quan%3==1)
@@ -138,7 +117,7 @@ elseif(isset($_SESSION["uid"]))
 								}
 								else
 								{
-									$free = (ceil($quan/3))-1;
+									$free = ceil($quan/3);
 								}
 							}
 						}
@@ -167,7 +146,8 @@ elseif(isset($_SESSION["uid"]))
 				}
 				if($totPro>0)
 				{
-					echo '<td>'.$totPro.'</td>';				}
+					echo '<td>'.$totPro.'</td>';				
+				}
 				else
 				{
 					$total = $row1["quantity"]*$row2["price"];
@@ -175,7 +155,7 @@ elseif(isset($_SESSION["uid"]))
 					$subTotal = $subTotal + $total;
 				}
 				echo '<td><form action = "del.php" method="post"><input type="hidden" name="oid" value="'.$row1["orderID"].'">';
-				echo '<input class = "btnn" type="submit" name="sub" value="Delete"></form></td></tr>';
+				echo '<input class="bton" type="submit" name="sub" value="Delete"></form></td></tr>';
 				}
 
 			}

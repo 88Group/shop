@@ -2,18 +2,6 @@
 <html>
 <head>
 	<title>Registered</title>
-	<style>
-		a{
-			  background-color: lightpink;
-			  color: black;
-			  padding: 16px;
-			  font-size: 16px;
-			  border: none;
-			  cursor: pointer;
-			  font-family: Arial, Helvetica, sans-serif;
-			  text-decoration: none
-			}
-	</style>
 </head>
 <body>
 <?php 

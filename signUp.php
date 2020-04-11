@@ -2,8 +2,24 @@
 <html>
 <head>
 	<title>Sign Up</title>
+	<link rel="stylesheet" href="style.css">
 	<style>
-		.box {
+			.box {
+			width: 28%;
+  			border: 4px solid #fd8585e3;
+			}
+		p{
+			font-family: Arial, Helvetica, sans-serif;
+			margin: 8px 0;
+			text-indent: 30px;
+			font-size: 18px;
+		}
+				input[type=submit]{
+			margin-left: 30px;
+			background-color: #fb6e6ee3;
+			color: #ffffff;
+		}
+		/*.box {
 			width: 30%;
   			border: 5px solid lightpink;
 			}
@@ -36,7 +52,7 @@
 			float: right;
 			font-family: Arial, Helvetica, sans-serif;
 			font-size: 14px;
-		}
+		}*/
 	</style>
 </head>
 <body>

@@ -2,53 +2,23 @@
 <html>
 <head>
 	<title>Product information </title>
+	<link rel="stylesheet" href="style.css">
 		<style>
+			input[type=number]{
+			max-width: 80px;
+		}
 		img{
-			max-width:300px;
+  			max-width: 300px;
   			max-height: 400px;
-  			float:  left;
-
-
+  			float: left;
 		}
-		.box{
-			background-color: lightpink;
-			max-width: 750px;
-  			max-height: 400px;
-  			margin-top: 25px;
-  			margin-left:300px;
-
+		.f{
+			margin-top: 40px;
 		}
-		.txt{
-			margin-left:50px;
-			margin-right:50px;
-			line-height: 1.8;
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 20px;
-		}
-		.btn{
-			  background-color: lightpink;
-			  color: black;
-			  padding: 16px;
-			  font-size: 16px;
-			  border: none;
-			  cursor: pointer;
-			  font-family: Arial, Helvetica, sans-serif;
-			}
-		a{
-			text-decoration: none;
-		}
-		input[type=submit]{
-			background-color: white;
-			  color: black;
-			  padding: 16px;
-			  font-size: 16px;
-			  border: none;
-			  cursor: pointer;
-			  font-family: Arial, Helvetica, sans-serif;
-			  float: right;
-		}
-		.orderbtn{
-			float: right;
+			input[type=submit]{
+			background-color: #fb6e6e;
+			color: #ffffff;
+			padding: 14px;
 		}
 		</style>
 </head>
@@ -78,7 +48,7 @@ if (mysqli_connect_errno())
 			{
 				echo '<div class = "f">';
 				echo '<img src= "data:image/jpeg;base64,' .base64_encode($row['image']).'">';
-				echo '<div class = "box"><div class = "txt">';
+				echo '<div class = "probox"><div class = "txt">';
 				echo '<br>Product Name:&nbsp&nbsp'.$row['name'];
 				echo '<br>Category:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' .$row['category'];
 				if($row['color']!= NULL)
