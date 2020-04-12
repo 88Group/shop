@@ -22,6 +22,12 @@
 		input[type=number]{
 			max-width: 80px;
 		}
+		
+		.btn:disabled{
+			min-width: 100px;
+			background-color:#dddddd; 
+			color:black;
+		}
 	
 		</style>
 </head>
@@ -96,7 +102,15 @@ if (mysqli_connect_errno())
 				echo '<br>Brand:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'.$row['brand'].'<br>';
 				echo '<div class = "orderbtn"><form action = "../order.php" method="post"> <input type="hidden" name="pID" value="'.$row['productID'].'">';
 				echo 'quantity:&nbsp<input type = "number" name="quantity" min="1" max = "'.$row['stock'].'">';
-				echo '&nbsp<input type="submit" name="submit2" value="Order" class="btn"></form></div><br>';
+				if($row['stock']<=0)
+				{
+					echo '&nbsp<input type="submit" name="submit2" value="Order" class="btn" disabled></form></div><br>';
+
+				}
+				else
+				{
+					echo '&nbsp<input type="submit" name="submit2" value="Order" class="btn"></form></div><br>';
+				}
 				echo '</div></div></div>';
 				}
 

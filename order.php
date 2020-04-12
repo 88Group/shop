@@ -8,6 +8,12 @@
 	{
 	$quantity = mysqli_real_escape_string($con,$_POST['quantity']);
 	$id = mysqli_real_escape_string($con,$_POST['pID']);
+	if($quantity<=0)
+	{
+		echo "<script> history.go(-1);</script>";
+	}
+	else
+	{
 	if(!isset($_SESSION["uid"]))
 	{
 		$_SESSION["pid"] = $id;
@@ -30,6 +36,7 @@
  		echo "<script> window.location.href = 'index.php';</script>";
  	}
 	}
+}
 }
 
 

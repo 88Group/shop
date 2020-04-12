@@ -100,7 +100,7 @@ elseif(isset($_SESSION["uid"]))
 						{
 							if($quan%3==0)
 							{
-								$total = $row2["price"]*(2/3)*$quan;
+								$total = $row2["price"]*(2/3);
 								$free = 0;
 							}
 							else if($quan%3==1)
@@ -117,7 +117,7 @@ elseif(isset($_SESSION["uid"]))
 								}
 								else
 								{
-									$free = ceil($quan/3);
+									$free = (ceil($quan/3))-1;
 								}
 							}
 						}
@@ -146,8 +146,7 @@ elseif(isset($_SESSION["uid"]))
 				}
 				if($totPro>0)
 				{
-					echo '<td>'.$totPro.'</td>';				
-				}
+					echo '<td>'.$totPro.'</td>';				}
 				else
 				{
 					$total = $row1["quantity"]*$row2["price"];
